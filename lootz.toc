@@ -1,5 +1,5 @@
 ## Interface: 70200
-## Title: Display Legion Loot
+## Title: Loot Display for Lazy Fucks
 ## SavedVariablesPerCharacter: LootzToFollow
 lootz.lua
 lootz.xml
