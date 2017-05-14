@@ -3,6 +3,7 @@ SLASH_LISTOFLOOTZ1 = "/lootzlist";
 SLASH_LOOTZHELP1 = "/lootzhelp";
 SLASH_BCKPCKLOOTZ1 = "/lootzbckpck";
 SLASH_ADDLOOTZ1 = "/lootzadd";
+SLASH_REMOVELOOTZ1 = "/lootzremove";
 
 SlashCmdList["CHECKLOOTZ"] = function(args)
     if LootzToFollow == nil or LootzToFollow == {} then
@@ -23,6 +24,20 @@ SlashCmdList["ADDLOOTZ"] = function(args)
         print("Need ID")
     else
         table.insert(LootzToFollow,args)
+        print(args .. " added")
+    end
+end
+
+SlashCmdList["REMOVELOOTZ"] = function(args)
+    if args == nil then
+        print("Need ID")
+    else
+        for i,j in LootzToFollow do
+            if j == args then
+                table.remove(LootzToFollow,i)
+                print(j .. " removed")
+            end
+        end
     end
 end
 
