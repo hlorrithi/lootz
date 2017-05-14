@@ -17,6 +17,9 @@ SlashCmdList.BCKPCKLOOTZ_OnEvent(self, event, …)
 <OnEvent>
 SlashCmdList.LOOTZHELP_OnEvent(self, event, …)
 </OnEvent>
+<OnEvent>
+SlashCmdList.ADDLOOTZ_OnEvent(self, event, …)
+</OnEvent>
 </Scripts>
 </Frame>
 </Ui>

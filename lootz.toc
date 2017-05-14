@@ -1,4 +1,5 @@
 ## Interface: 70200
 ## Title: Display Legion Loot
+## SavedVariablesPerCharacter: LootzToFollow
 lootz.lua
 lootz.xml
