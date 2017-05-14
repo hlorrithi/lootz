@@ -1,0 +1,4 @@
+## Interface: 70200
+## Title: Display Legion Loot
+lootz.lua
+lootz.xml
