@@ -1,7 +1,7 @@
 SLASH_CHECKLOOTZ1 = "/lootz";
 SLASH_LISTOFLOOTZ1 = "/lootzlist";
 SLASH_LOOTZHELP1 = "/lootzhelp";
-SLASH_BCKPCKLOOTZ1 = "/lootzbckpck";
+SLASH_BCKPCKLOOTZ1 = "/lootzbp";
 SLASH_ADDLOOTZ1 = "/lootzadd";
 SLASH_REMOVELOOTZ1 = "/lootzremove";
 
@@ -52,8 +52,8 @@ end
 SlashCmdList["BCKPCKLOOTZ"] = function(args)
     local TotalWatchedCurrency = GetNumWatchedTokens()
     for i=1,TotalWatchedCurrency do
-        local foo1, foo2, foo3, foo4, foo5 = GetBackpackCurrencyInfo(i)
-		print(foo1, foo2, foo3, foo4, foo5)
+        local foo1, _, _, foo2 = GetBackpackCurrencyInfo(i)
+		print(foo1, foo2)
     end
 end
 
@@ -61,7 +61,7 @@ SlashCmdList["LOOTZHELP"] = function(args)
     print("/lootz: prints selected currencies")
     print("/lootzadd <id>: add currency to selection")
     print("/lootzlist: bitch does nothing")
-    print("/lootzbckpck: prints id of backpack currencies for /lootz selection")
+    print("/lootzbp: prints id of backpack currencies for /lootzadd")
     print("/lootzhelp: prints this help page")
 
 end
