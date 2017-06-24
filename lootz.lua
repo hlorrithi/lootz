@@ -59,7 +59,7 @@ end
 SlashCmdList["LOOTZHELP"] = function(args)
     print("/lootz: prints pre-selected currencies")
     print("/lootz <currency_name>: prints specified currency")
-    print("/lootz all": prints all currencies")
+    print("/lootz all: prints all currencies")
     print("/lootzadd <currency_name>: adds currency to selection")
     print("/lootzremove: removes currency from selection")
     print("/lootzhelp: prints this help page")
