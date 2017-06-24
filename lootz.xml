@@ -6,22 +6,22 @@
 <OnLoad>
 </OnLoad>
 <OnEvent>
-SlashCmdList.CHECKLOOTZ_OnEvent(self, event, …)
+SlashCmdList.CHECKLOOTZ_OnEvent(self, event)
 </OnEvent>
 <OnEvent>
-SlashCmdList.LISTOFLOOTZ_OnEvent(self, event, …)
+SlashCmdList.LISTOFLOOTZ_OnEvent(self, event)
 </OnEvent>
 <OnEvent>
-SlashCmdList.BCKPCKLOOTZ_OnEvent(self, event, …)
+SlashCmdList.BCKPCKLOOTZ_OnEvent(self, event)
 </OnEvent>
 <OnEvent>
-SlashCmdList.LOOTZHELP_OnEvent(self, event, …)
+SlashCmdList.LOOTZHELP_OnEvent(self, event)
 </OnEvent>
 <OnEvent>
-SlashCmdList.ADDLOOTZ_OnEvent(self, event, …)
+SlashCmdList.ADDLOOTZ_OnEvent(self, event)
 </OnEvent>
 <OnEvent>
-SlashCmdList.REMOVELOOTZ_OnEvent(self, event, …)
+SlashCmdList.REMOVELOOTZ_OnEvent(self, event)
 </OnEvent>
 </Scripts>
 </Frame>
