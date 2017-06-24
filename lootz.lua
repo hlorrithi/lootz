@@ -46,12 +46,11 @@ SlashCmdList["SHOWLOOTZ"] = function(args)
                 if j == _name then
                     print(_name .. ": " .. _count)
                 end
-              
             end
         else
             if args == _name then
                 print(_name .. ": " .. _count)
-            end)
+            end
         end
     end
 end
