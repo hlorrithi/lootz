@@ -22,6 +22,8 @@ SlashCmdList["ADDLOOTZ"] = function(args)
 	end
     if args == nil then
         print("Need ID")
+    elseif string.match(args, "%W") then
+        print("Invalid argument")
     else
         table.insert(LootzToFollow,args)
         print(args .. " added")
@@ -60,6 +62,7 @@ end
 SlashCmdList["LOOTZHELP"] = function(args)
     print("/lootz: prints selected currencies")
     print("/lootzadd <id>: add currency to selection")
+    print("/lootzremove: removes currency from selection")
     print("/lootzlist: bitch does nothing")
     print("/lootzbp: prints id of backpack currencies for /lootzadd")
     print("/lootzhelp: prints this help page")
