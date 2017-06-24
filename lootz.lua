@@ -43,8 +43,9 @@ SlashCmdList["SHOWLOOTZ"] = function(args)
                 print("No currencies pre-selected. Use /lootzadd")
             else
                 for j in LootzSelected do
-                if j == _name then
-                    print(_name .. ": " .. _count)
+                    if j == _name then
+                        print(_name .. ": " .. _count)
+                    end
                 end
             end
         else
