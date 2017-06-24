@@ -1,31 +1,18 @@
-SLASH_CHECKLOOTZ1 = "/lootz";
-SLASH_LISTOFLOOTZ1 = "/lootzlist";
+SLASH_SHOWLOOTZ1 = "/lootz";
 SLASH_LOOTZHELP1 = "/lootzhelp";
-SLASH_BCKPCKLOOTZ1 = "/lootzbp";
 SLASH_ADDLOOTZ1 = "/lootzadd";
 SLASH_REMOVELOOTZ1 = "/lootzremove";
 
-SlashCmdList["CHECKLOOTZ"] = function(args)
-    if LootzToFollow == nil or LootzToFollow == {} then
-        print("No currencies selected. Use /lootzadd <id> to select currency.")
-    else
-        for i,id in ipairs(LootzToFollow) do
-            local name, currentAmount = GetCurrencyInfo(id)
-            print(name .. ": " .. currentAmount)
-        end
-    end
-end
-
 SlashCmdList["ADDLOOTZ"] = function(args)
-    if LootzToFollow == nil then
-	    LootzToFollow = {}
+    if LootzSelected == nil then
+	    LootzSelected = {}
 	end
     if args == nil then
-        print("Need ID")
+        print("Need currency name")
     elseif string.match(args, "%W") then
         print("Invalid argument")
     else
-        table.insert(LootzToFollow,args)
+        table.insert(LootzSelected,args)
         print(args .. " added")
     end
 end
@@ -34,39 +21,47 @@ SlashCmdList["REMOVELOOTZ"] = function(args)
     if args == nil then
         print("Need ID")
     elseif args == "all" then
-        LootzToFollow = {}
+        LootzSelected = nil
     else
-        for i,j in LootzToFollow do
-            if j == args then
-                table.remove(LootzToFollow,i)
-                print(j .. " removed")
+        for i in LootzSelected do
+            if i == args then
+                table.remove(LootzSelected,i)
+                print(i .. " removed")
             end
         end
     end
 end
 
-SlashCmdList["LISTOFLOOTZ"] = function(args)
+SlashCmdList["SHOWLOOTZ"] = function(args)
     local TotalCurrency = GetCurrencyListSize()
     for i=1,TotalCurrency do
         local _name, _, _, _, _, _count = GetCurrencyListInfo(i)
-        print(_name .. ": " .. _count)
-    end
-end
-
-SlashCmdList["BCKPCKLOOTZ"] = function(args)
-    local TotalWatchedCurrency = GetNumWatchedTokens()
-    for i=1,TotalWatchedCurrency do
-        local foo1, _, _, foo2 = GetBackpackCurrencyInfo(i)
-		print(foo1, foo2)
+        if args == "all" then
+            print(_name .. ": " .. _count)
+        elseif args == nil then
+            if LootzSelected == {} or LootzSelected == nil then
+                print("No currencies pre-selected. Use /lootzadd")
+            else
+                for j in LootzSelected do
+                if j == _name then
+                    print(_name .. ": " .. _count)
+                end
+              
+            end
+        else
+            if args == _name then
+                print(_name .. ": " .. _count)
+            end)
+        end
     end
 end
 
 SlashCmdList["LOOTZHELP"] = function(args)
-    print("/lootz: prints selected currencies")
-    print("/lootzadd <id>: add currency to selection")
+    print("/lootz": prints pre-selected currencies")
+    print("/lootz <currency_name>: prints specified currency")
+    print("/lootz all": prints all currencies"))
+    print("/lootzadd <currency_name>: adds currency to selection")
     print("/lootzremove: removes currency from selection")
-    print("/lootzlist: bitch does nothing")
-    print("/lootzbp: prints id of backpack currencies for /lootzadd")
     print("/lootzhelp: prints this help page")
 
 end

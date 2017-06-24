@@ -1,5 +1,5 @@
 ## Interface: 70200
 ## Title: Loot Display for Lazy Fucks
-## SavedVariablesPerCharacter: LootzToFollow
+## SavedVariablesPerCharacter: LootzSelected
 lootz.lua
 lootz.xml
