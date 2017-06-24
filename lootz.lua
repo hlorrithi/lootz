@@ -5,11 +5,11 @@ SLASH_REMOVELOOTZ1 = "/lootzremove";
 
 SlashCmdList["ADDLOOTZ"] = function(args)
     if LootzSelected == nil then
-	    LootzSelected = {}
-	end
+	LootzSelected = {}
+    end
     if args == nil then
         print("Need currency name")
-    elseif string.match(args, "%W") then
+    elseif string.match(args, ",") then
         print("Invalid argument")
     else
         table.insert(LootzSelected,args)
@@ -38,12 +38,12 @@ SlashCmdList["SHOWLOOTZ"] = function(args)
         local _name, _, _, _, _, _count = GetCurrencyListInfo(i)
         if args == "all" then
             print(_name .. ": " .. _count)
-        elseif args == nil then
+        elseif args == "" then
             if LootzSelected == {} or LootzSelected == nil then
                 print("No currencies pre-selected. Use /lootzadd")
             else
-                for j in LootzSelected do
-                    if j == _name then
+                for j,k in ipairs(LootzSelected) do
+                    if k == _name then
                         print(_name .. ": " .. _count)
                     end
                 end
