@@ -6,13 +6,7 @@
 <OnLoad>
 </OnLoad>
 <OnEvent>
-SlashCmdList.CHECKLOOTZ_OnEvent(self, event)
-</OnEvent>
-<OnEvent>
-SlashCmdList.LISTOFLOOTZ_OnEvent(self, event)
-</OnEvent>
-<OnEvent>
-SlashCmdList.BCKPCKLOOTZ_OnEvent(self, event)
+SlashCmdList.SHOWLOOTZ_OnEvent(self, event)
 </OnEvent>
 <OnEvent>
 SlashCmdList.LOOTZHELP_OnEvent(self, event)
