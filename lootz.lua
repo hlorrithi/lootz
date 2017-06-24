@@ -33,7 +33,7 @@ end
 SlashCmdList["REMOVELOOTZ"] = function(args)
     if args == nil then
         print("Need ID")
-    elif args == "all" then
+    elseif args == "all" then
         LootzToFollow = {}
     else
         for i,j in LootzToFollow do
