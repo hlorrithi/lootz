@@ -2,6 +2,20 @@ SLASH_SHOWLOOTZ1 = "/lootz";
 SLASH_LOOTZHELP1 = "/lootzhelp";
 SLASH_ADDLOOTZ1 = "/lootzadd";
 SLASH_REMOVELOOTZ1 = "/lootzremove";
+SLASH_SELECTEDLOOTZ1 = "/lootzselect";
+
+SlashCmdList["SELECTEDLOOTZ"] = function(args)
+    if LootzSelected == nil then
+        LootzSelected = {}
+    end
+    if LootzSelected == {} then
+        print("No currencies pre-selected. Use /lootzadd")
+    else
+        for i in LootzSelected:
+            print i
+        end
+    end
+end
 
 SlashCmdList["ADDLOOTZ"] = function(args)
     if LootzSelected == nil then
@@ -63,5 +77,5 @@ SlashCmdList["LOOTZHELP"] = function(args)
     print("/lootzadd <currency_name>: adds currency to selection")
     print("/lootzremove: removes currency from selection")
     print("/lootzhelp: prints this help page")
-
+    print("/lootzselect: prints pre-selected currency list")
 end

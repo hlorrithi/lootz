@@ -17,6 +17,9 @@ SlashCmdList.ADDLOOTZ_OnEvent(self, event)
 <OnEvent>
 SlashCmdList.REMOVELOOTZ_OnEvent(self, event)
 </OnEvent>
+<OnEvent>
+SlashCmdList.SELECTEDLOOTZ_OnEvent(self, event)
+</OnEvent>
 </Scripts>
 </Frame>
 </Ui>
