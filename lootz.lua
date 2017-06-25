@@ -11,8 +11,9 @@ SlashCmdList["SELECTEDLOOTZ"] = function(args)
     if LootzSelected == {} then
         print("No currencies pre-selected. Use /lootzadd")
     else
-        for i in LootzSelected:
-            print i
+        print("Pre-selected currencies:")
+	for i,j in ipairs(LootzSelected) do
+            print(j)
         end
     end
 end
