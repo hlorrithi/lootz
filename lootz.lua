@@ -37,12 +37,8 @@ SlashCmdList["REMOVELOOTZ"] = function(args)
     elseif args == "all" then
         LootzSelected = nil
     else
-        for i in LootzSelected do
-            if i == args then
-                table.remove(LootzSelected,i)
-                print(i .. " removed")
-            end
-        end
+        table.remove(LootzSelected,args)
+        print(args .. " removed")
     end
 end
 
