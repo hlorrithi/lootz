@@ -40,7 +40,7 @@ SlashCmdList["REMOVELOOTZ"] = function(args)
     else
         for i,j in ipairs(LootzSelected) do
             if i == args then
-            table.remove(LootzSelected,i)
+            table.remove(LootzSelected,j)
             break
             end
         end
