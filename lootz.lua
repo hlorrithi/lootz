@@ -42,8 +42,8 @@ SlashCmdList["REMOVELOOTZ"] = function(args)
             if i == args then
             table.remove(LootzSelected,i)
             break
-            done
-            done
+            end
+        end
         print(args .. " removed")
     end
 end
