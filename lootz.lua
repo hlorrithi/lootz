@@ -8,7 +8,7 @@ SlashCmdList["SELECTEDLOOTZ"] = function(args)
     if LootzSelected == nil then
         LootzSelected = {}
     end
-    if LootzSelected == {} then
+    if #LootzSelected == 0 then
         print("No currencies pre-selected. Use /lootzadd")
     else
         print("Pre-selected currencies:")
@@ -20,7 +20,7 @@ end
 
 SlashCmdList["ADDLOOTZ"] = function(args)
     if LootzSelected == nil then
-	LootzSelected = {}
+	    LootzSelected = {}
     end
     if args == nil then
         print("Need currency name")
@@ -36,11 +36,12 @@ SlashCmdList["REMOVELOOTZ"] = function(args)
     if args == nil then
         print("Need ID")
     elseif args == "all" then
-        LootzSelected = nil
+        LootzSelected = {}
+		print("All currencies removed.")
     else
-        for i,j in ipairs(LootzSelected) do
-            if i == args then
-            table.remove(LootzSelected,j)
+        for i,currency in ipairs(LootzSelected) do
+            if currency == args then
+            table.remove(LootzSelected,i)
             break
             end
         end
@@ -55,8 +56,9 @@ SlashCmdList["SHOWLOOTZ"] = function(args)
         if args == "all" then
             print(_name .. ": " .. _count)
         elseif args == "" then
-            if LootzSelected == {} or LootzSelected == nil then
+            if #LootzSelected == 0 or LootzSelected == nil then
                 print("No currencies pre-selected. Use /lootzadd")
+				break
             else
                 for j,k in ipairs(LootzSelected) do
                     if k == _name then
